@@ -1,0 +1,37 @@
+\scalebox{0.50}{
+\tikz{
+\tikzstyle{block}=[draw, inner sep=0pt, outer sep=0pt, minimum width=4cm, minimum height=2.3cm, rounded corners=2mm, align=center, font=\small]
+
+\node[block] (mr)  {Model Registry\\[2mm]Model A\\Model B\\Model C};
+\node[block, right=1.7cm of mr] (np)  {Inference Market\\(workload queue)};
+\node[block, right=1.7cm of np] (ua)  {zk-VIN SDK\\$1:1$ verifier contract per\\model\\Verifying Keys\\Verified Output Data};
+
+\node[block, below=3cm of mr] (mr1)  {Node Pool\\(workers)};
+\node[block, right=1.7cm of mr1] (np1) {zk-ML proving circuits\\(model dependant)};
+\node[block, right=1.7cm of np1] (ua1)  {Aggregation Circuits\\(proof of proofs)};
+
+\node[block, minimum height=1.2cm, above=.7cm of np, rounded corners=6mm] (eu) {End Users\\
+Al prediction consumers};
+\node[block, minimum height=1.2cm, above=.7cm of ua, rounded corners=6mm] (da) {dApp Contract};
+
+\node[cylinder, draw, shape aspect=1, minimum height=1cm,
+       minimum width=1.8cm, minimum height=1.5cm, rotate=90] (cy) at ([yshift=-2.5cm]$(mr1)!.5!(np1)$) {} node at (cy) {Arweave};
+
+\node[draw, anchor=north, minimum width=17cm, minimum height=5.5cm, rounded corners=3mm] (r1) at ([yshift=1cm]np1.north) {};
+\node[draw, dashed, anchor=south, minimum width=17cm, minimum height=5.4cm, rounded corners=3mm] (r2) at ([yshift=-1cm]np.south) {};
+
+\node[above right, anchor=south west] at (r1.north west) {\textbf{off-chain}};
+\node[above right, anchor=south west] at (r2.north west) {\textbf{on-chain}};
+% Paths
+\draw[-triangle 45] (eu)--(np); \draw[-triangle 45] (da)--(ua);
+\draw[-triangle 45] (da.west) -- ++(-1,-.85) -| (np.60);
+\draw[-triangle 45] (ua)-- node[align=center,below, font=\footnotesize] {Prune\\Completed\\Workloads} (np);
+\draw[-triangle 45] (mr)--node[fill=white,pos=.17] {Model Details} (mr1);
+\draw[-triangle 45] (np.-100)--node[fill=white, pos=.33] {Input} ++(0,-1.5) -|  (mr1.60);
+\draw[-triangle 45] (np1.80)--node[fill=white, pos=.33] {Proof \& Output} ++(0,1.5) -|  (ua.-120);
+\draw[-triangle 45] (ua1)--node[fill=white, pos=.17] {Proof(s) \& Output(s)}   (ua);
+\draw[-triangle 45] (mr1)--node[above] {Output} coordinate[pos=.5] (z) (np1);
+\draw[-triangle 45] (np1)--node[above] {Proofs} (ua1);
+\draw[-triangle 45] (z)--(cy);
+}
+}

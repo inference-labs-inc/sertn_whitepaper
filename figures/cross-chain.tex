@@ -1,0 +1,52 @@
+\scalebox{0.5}{
+\tikz{
+\tikzstyle{block}=[draw, inner sep=0pt, outer sep=0pt, minimum width=2.2cm, minimum height=1.2cm, rounded corners=2mm, align=center]
+
+\begin{scope}[on above layer]
+\node[block,  rounded corners=6mm] (a) {dApp\\Contracts};  
+\end{scope}
+
+%---------
+\node[draw,fill=white, densely dotted,  thick, minimum width=5.5cm, minimum height=2.5cm, rounded corners=2mm] (ls1) at (a)  {};
+\begin{scope}[on behind layer]
+\node[draw, densely dotted, thick,fill=white, minimum width=5.5cm, minimum height=2.5cm, rounded corners=2mm] (ls2) at ($(a)+(-.35,.35)$)  {};
+\end{scope}
+\begin{scope}[on background layer]
+\node[draw, densely dotted,thick, fill=white, minimum width=5.5cm, minimum height=2.5cm, rounded corners=2mm] (ls3) at ($(a)+(-.7,.7)$)  {};
+\end{scope}
+
+\node[fill=white, anchor=west] at ([xshift=3mm]ls1.north west) {\scriptsize{L1s ie. Ethereum, Near, Solana}};
+\node[fill=white, anchor=west] at ([xshift=3mm]ls2.north west) {\scriptsize{L2s ie. Polygon, Arb, Stark}};
+\node[fill=white, anchor=west] at ([xshift=3mm]ls3.north west) {\scriptsize{L3s ie. Appchains}};
+
+\node[block, minimum width=3.5cm, minimum height=2cm, left=4.5cm of a] (rs)  {Rollup\\\footnotesize(sequencer, verifier, msg)};
+
+\node[block, minimum width=3.5cm, minimum height=2cm, above=2.5cm of rs] (mr)  {Model registry\\Inference market};
+\node[block, minimum width=3.5cm, minimum height=2cm, right=.6cm of mr] (np)  {Node pool\\Worker};
+\node[block, minimum width=3.5cm, minimum height=2cm, right=.6cm of np] (ua)  {Unique AI Model\\Verification Contract};
+
+\node[dashed, draw, minimum width=12.5cm, minimum height=2.5cm, rounded corners=2mm] (rec) at (np) {};
+\node[anchor=west, above, xshift=7mm] at (rec.north west) {\textbf{zk-VIN}};
+
+\node[left=2cm of rs, scale=3.5] (cus) {\faUser};
+
+\begin{scope}[on above layer]
+\node[block, fill=white, rounded corners=6mm,  above=2.7cm of cus] (om) {Omnichain\\Source};  
+\end{scope}
+\begin{scope}[on behind layer]
+\node[block, fill=white, rounded corners=6mm] at ($(om)+(-.12,.12)$) {}; 
+\end{scope}
+\begin{scope}[on background layer]
+\node[block,fill=white, rounded corners=6mm] at ($(om)+(-.24,.24)$) {}; 
+\end{scope}
+
+
+% Paths
+\draw[triangle 45-triangle 45] ([yshift=-4mm]cus.north)--node[pos=.6,fill=white,below, font=\scriptsize, align=center] {tx\\$[$Input, precommitment$]$} (om);
+
+\draw[-triangle 45] ([xshift=-4mm]cus.east) --++(1.1,0) |- node[pos=.25,fill=white,below, font=\scriptsize, align=center, sloped] {tx\\$[$Input, payment, destination$]$} (mr);
+
+\draw[-triangle 45] (rs)--(a);
+\draw[-triangle 45] (ua)--++(0,-2) -| node[above,pos=.25] {\footnotesize verified inference output} (rs);
+}    
+}

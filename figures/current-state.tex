@@ -1,0 +1,30 @@
+\scalebox{0.65}{
+\tikz{
+\tikzstyle{block}=[draw, inner sep=0pt, outer sep=0pt, minimum width=2.2cm, minimum height=1.2cm, rounded corners=1mm, align=center]
+
+\node[block] (a) {On-chain\\Verification};
+\node[block,right=.5cm of a] (b) {Proof\\Storage}; 
+\node[block, right=.5cm of b] (c) {Execution\\Action}; 
+%---------
+\node[draw, densely dotted, thick, minimum width=8.5cm, minimum height=2.3cm, rounded corners=2mm] (l1) at (b)  {};
+
+
+\node[above, anchor=south west] at ([xshift=0mm]l1.north west) {\scriptsize\textbf{L1 / repeated for each chain}};
+
+\node[block, minimum width=2.5cm, left=3cm of a] (ai) {Al Operator /\\Application};
+
+\begin{scope}[xshift=-2.5cm,yshift=3.3cm]
+\foreach \i in {1,1.7,...,10}{
+\foreach \j in {0,-.5}{
+\node[fill=black, inner sep=2.3pt] at (\i,\j) {};
+}
+}   
+\end{scope}
+
+\node[align=left, anchor=west, font=\small] at ([yshift=2.45cm]ai.north west) {\textbf{End users}\\\textbf{Al prediction consumers}};
+%-------------
+\draw[-triangle 45] (ai)--node[fill=white, font=\footnotesize, align=center, pos=.45] {Circuitization\\of AI Model} (a);
+
+\draw[triangle 45-] ([yshift=-4mm]l1.80)--+(0,1.5);
+}    
+}

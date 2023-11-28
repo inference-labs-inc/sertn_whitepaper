@@ -1,0 +1,40 @@
+\scalebox{0.65}{
+
+\tikz{
+\tikzstyle{block}=[draw, inner sep=0pt, outer sep=0pt, minimum width=3.3cm, minimum height=.85cm, rounded corners=1mm, align=center]
+
+\node[block] (a) {Input Layer};
+\node[block, below=3mm of a] (b) {Quantization};
+\node[block, below=3mm of b] (c) {Encoding};
+\node[block, below=3mm of c] (d) {Arithmetic Circuit};
+\node[block, below=3mm of d] (e) {Decoding};
+\node[block, below=3mm of e] (f) {Output Layer};
+\node[block, below=3mm of f] (g) {Proving Stage};
+\node[block, below=3mm of g] (h) {Verification Stage};
+
+%--------------------------
+\node[block, left=2cm of h, minimum width=2.5cm, fill=black!60, text=white] (ver) {Verifier};
+\node[block, below=2cm of ver, fill=black!60, text=white, rounded corners=4.3mm] (pu) {Proof Unverified};
+\node[block, left=2cm of a, minimum width=2.5cm, fill=black!60, text=white, rounded corners=4.3mm] (pr) {Prover};
+
+\node[block, minimum size=1.85cm, rotate=45, rounded corners=0pt] (vp) at (pu-|h) {};
+\node at (vp) {Valid Proof?};
+
+\node[block, right=2cm of h, minimum width=2.5cm, fill=none, draw=none, text=white] (verf) {};
+\node[block, below=2cm of verf,  fill=black!60, text=white, rounded corners=4.3mm] (pv) {Proof Verified};
+
+%-------------------
+\draw[-triangle 45] ($(a.west)+(-1,0)$)--node[pos=0, left] {\small Input} (a.west);
+\draw[-triangle 45] (a.east)--++(1,0) |- node[pos=0.25, right, align=left, font=\small] {Data to be processed} (b.east);
+\draw[-triangle 45] (b.west)--++(-1,0) |- node[pos=0.25, left, align=right, font=\small] {Convert to fixed point\\numerical representation} (c.west);
+\draw[-triangle 45] (c.east)--++(1,0) |- node[pos=0.25, right, align=left, font=\small] {Encode} (d.east);
+\draw[-triangle 45] (d.west)--++(-1,0) |- node[pos=0.25, left, align=right, font=\small] {Process encoded\\ input data} (e.west);
+\draw[-triangle 45] (e.east)--++(1,0) |- node[pos=0.25, right, align=left, font=\small] {Decode Arithmetic\\ Circuit Output Data} (f.east);
+\draw[-triangle 45] (f.west)--++(-1,0) |- node[pos=0.25, left, align=right, font=\small] {Submit to \\Proving Stage} (g.west);
+\draw[-triangle 45] (g.east)--++(1,0) |- node[pos=0.25, right, align=left, font=\small] {} (h.east);
+\draw[-triangle 45] (h)--(ver);
+\draw[-triangle 45] (ver.south)--++(0,-.5) -| (vp.north east);
+\draw[-triangle 45] (vp.north west)--node[fill=white] {\textbf{No}} (pu);
+\draw[-triangle 45] (vp.south east)--node[fill=white] {\textbf{Yes}} (pv);
+}
+}

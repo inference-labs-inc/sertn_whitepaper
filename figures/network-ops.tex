@@ -1,0 +1,43 @@
+\scalebox{0.65}{
+\tikz{
+\node[scale=2.5, label={[label distance=0mm]below:Consumer}, inner sep=0pt] (cus) {\faUser};
+
+\draw[dashed] (0,-1.3)--
+coordinate[pos=.1] (a1)
+coordinate[pos=.25] (a2)
+coordinate[pos=.9] (a3)
++(0,-6);
+
+\draw[dashed] (4.5,-1.3)--node[pos=0, above=3mm, align=center] {Omnichain\\L1, L2, L3}
+coordinate[pos=.1] (b1)
+coordinate[pos=.25] (b2)
+coordinate[pos=.9] (b3)
+coordinate[pos=.75] (b4)
++(0,-6);
+
+\draw[dashed] (9,-1.3)--node[pos=0, above=3mm, align=center] {zk-VIN}
+coordinate[pos=.1] (c1)
+coordinate[pos=.25] (c2)
+coordinate[pos=.9] (c3)
+coordinate[pos=.4] (c5)
+coordinate[pos=.55] (c6)
++(0,-6);
+
+\draw[dashed] (13.5,-1.3)--node[pos=0, above=3mm, align=center] {Node\\(dApp)}
+coordinate[pos=.1] (d1)
+coordinate[pos=.25] (d2)
+coordinate[pos=.9] (d3)
+coordinate[pos=.75] (d4)
+coordinate[pos=.4] (d5)
+coordinate[pos=.55] (d6)
++(0,-6);
+
+
+\draw[-triangle 45] (a1)--node[fill=white, font=\footnotesize] {[Input, precommitment]} (b1);
+\draw[-triangle 45] (a2)--node[fill=white, font=\small] {[Input, computation payment, output destination]} (c2);
+\draw[triangle 45-] (a3)--node[fill=white, font=\footnotesize] {On-chain state updated} (b3);
+\draw[triangle 45-triangle 45] (b4)--node[pos=.255,fill=white, font=\footnotesize, align=center] {Verify proof\\Rollup Verified Output} node[pos=.75,fill=white, font=\footnotesize, align=center] {Remit payment} (d4);
+\draw[-triangle 45] (c5)--node[fill=white, font=\footnotesize, align=center] {Delegate worker} (d5);
+\draw[triangle 45-] (c6)--node[fill=white, font=\footnotesize, align=center] {Perform inference\\Calculate Proof} (d6);
+}    
+}

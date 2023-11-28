@@ -1,0 +1,21 @@
+\scalebox{0.65}{
+\tikz[yscale=1.5]{
+\foreach \i\j in {0/0,1/100,2/200,3/300,4/400}
+\node[outer sep=0pt, inner sep=0pt] at (0,\i) {\j};
+
+\node[anchor=south west, outer sep=0pt, inner sep=0pt] at (-.075,-.5) {08/28/23};
+\node[anchor=south, outer sep=0pt, inner sep=0pt] at (10,-.5) {09/19/23};
+
+\draw[thick] (0,3.65)--node[left,pos=0] {\color{teal}\small365} node[right,pos=1] {\color{teal}\small210} (10,2.1);
+\draw[thick] (0,1.8)--node[left,pos=0] {\color{red!80!black}\small190} node[right,pos=1] {\color{red!80!black}\small140} (10,1.4);
+
+\node[] at (5,4.5) {Memory Consumption (GB)};
+\node[align=center] at (5,-1) {Comparison of memory consumption\\ for circuit and proof generation between two dates.};
+
+\node[anchor=west, align=left, font=\footnotesize] (a) at (10,4) {Memory Consumption\\Circuit Generation};
+\node[anchor=west, align=left, font=\footnotesize] (b) at (10,3.3) {Memory Consumption\\Proof Generation};
+
+\draw[very thick, red!80!black] (a.north west)--(a.south west);
+\draw[very thick, teal] (b.north west)--(b.south west);
+}    
+}
