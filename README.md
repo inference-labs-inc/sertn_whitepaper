@@ -2,7 +2,7 @@
 # Zero Knowledge Verified Inference Network
 
 ## Overview
-This repository contains the LaTeX source code for our whitepaper. This document presents a comprehensive analysis of our plans to built the first network purpose built for verified inferences.
+This repository contains the LaTeX source code for our whitepaper. This document presents a comprehensive analysis of our plans to build a network solely for verified artificial intelligence inferences and operations.
 
 ## File Structure
 - `zk-vin-whitepaper.tex`: The main LaTeX file that compiles the entire whitepaper.
