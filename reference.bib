@@ -1,0 +1,286 @@
+\usepackage{url}
+
+@misc{Nakamoto2008BitcoinPeerToPeer,
+  author = {Satoshi Nakamoto},
+  title = {Bitcoin: A Peer-to-Peer Electronic Cash System},
+  year = {2008},
+  abstract = {A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one party to another without going through a financial institution. Digital signatures provide part of the solution, but the main benefits are lost if a trusted third party is still required to prevent double-spending. We propose a solution to the double-spending problem using a peer-to-peer network. The network timestamps transactions by hashing them into an ongoing chain of hash-based proof-of-work, forming a record that cannot be changed without redoing the proof-of-work. The longest chain not only serves as proof of the sequence of events witnessed, but proof that it came from the largest pool of CPU power. As long as a majority of CPU power is controlled by nodes that are not cooperating to attack the network, they'll generate the longest chain and outpace attackers. The network itself requires minimal structure. Messages are broadcast on a best effort basis, and nodes can leave and rejoin the network at will, accepting the longest proof-of-work chain as proof of what happened while they were gone.},
+  url = {https://bitcoin.org/bitcoin.pdf},
+}
+
+
+@inproceedings{Ghodsi2017SafetyNetsVE,
+  author = {Zahra Ghodsi and Tianyu Gu and Siddharth Garg},
+  title = {{SafetyNets}: verifiable execution of deep neural networks on an untrusted cloud},
+  booktitle = {Neural Information Processing Systems ({NIPS} '17)},
+  year = {2017},
+  abstract = {Inference using deep neural networks is often outsourced to the cloud since it is a computationally demanding task. However, this raises a fundamental issue of trust. How can a client be sure that the cloud has performed inference correctly? A lazy cloud provider might use a simpler but less accurate model to reduce its own computational load, or worse, maliciously modify the inference results sent to the client. We propose SafetyNets, a framework that enables an untrusted server (the cloud) to provide a client with a short mathematical proof of the correctness of inference tasks that they perform on behalf of the client. Specifically, SafetyNets develops and implements a specialized interactive proof (IP) protocol for verifiable execution of a class of deep neural networks, i.e., those that can be represented as arithmetic circuits. Our empirical results on three- and four-layer deep neural networks demonstrate the run-time costs of SafetyNets for both the client and server are low. SafetyNets detects any incorrect computations of the neural network by the untrusted server with high probability, while achieving state-of-the-art accuracy on the MNIST digit recognition (99.4\%) and TIMIT speech recognition tasks (75.22\%).},
+  pages = {4675–4684},
+  numpages = {10},
+  isbn = {9781510860964},
+  url = {https://dl.acm.org/doi/pdf/10.5555/3294996.3295220},
+}
+@comment{
+  publisher = {Curran Associates Inc.},
+  address = {Red Hook, NY, USA},
+  location = {Long Beach, California, USA},
+}
+
+@article{Lee2020vCNNVC,
+  title = {{vCNN}: Verifiable Convolutional Neural Network},
+  author = {Seunghwan Lee and Hankyung Ko and Jihye Kim and Hyunok Oh},
+  journal = {IACR Cryptol. ePrint Arch.},
+  year = {2020},
+  volume = {2020},
+  pages = {584},
+  abstract = {With the development of AI systems, services using them expand to various applications. The widespread adoption of AI systems relies substantially on the ability to trust their output. Therefore, it is becoming important for a client to be able to check whether the AI inference services have been correctly calculated. Since the weight value in a CNN model is an asset of service providers, the client should be able to check the correctness of the result without the weight value. Furthermore, when the result is checked by a third party, it should be possible to verify the correctness even without the user’s input data. Fortunately, zero-knowledge Succinct Non-interactive ARguments of Knowledge (zk-SNARKs) allow to verify the result without input and weight values. However, the proving time in zk-SNARKs is too slow to be applied to real AI applications. This paper proposes a new efficient verifiable convolutional neural network (vCNN) framework which accelerates the proving performance tremendously. To increase the proving performance, we propose a new efficient relation representation for convolution equations. While the proving complexity of convolution is $O(ln)$ in the existing zk-SNARK approaches, it reduces to $O(l + n)$ in the proposed approach where l and n denote the size of kernel and the data in CNNs. Experimental results show that the proposed vCNN improves prove performance by 20 fold for a simple MNIST and 18000 fold for VGG16. The security of the proposed scheme is proven formally. Index Terms—Convolutional Neural Networks, Verifiable Computation, zk-SNARKs},
+  url = {https://eprint.iacr.org/2020/584.pdf},
+}
+
+@inproceedings{Liu2021zkCNNZK,
+  author = {Tianyi Liu and Xiang Xie and Yupeng Zhang},
+  title = {{zkCNN}: Zero Knowledge Proofs for Convolutional Neural Network Predictions and Accuracy},
+  year = {2021},
+  isbn = {9781450384544},
+  abstract = {Deep learning techniques with neural networks are developing prominently in recent years and have been deployed in numerous applications. Despite their great success, in many scenarios it is important for the users to validate that the inferences are truly computed by legitimate neural networks with high accuracy, which is referred to as the integrity of machine learning predictions. To address this issue, in this paper, we propose zkCNN, a zero knowledge proof scheme for convolutional neural networks (CNN). The scheme allows the owner of the CNN model to prove to others that the prediction of a data sample is indeed calculated by the model, without leaking any information about the model itself. Our scheme can also be generalized to prove the accuracy of a secret CNN model on a public dataset.Underlying zkCNN is a new sumcheck protocol for proving fast Fourier transforms and convolutions with a linear prover time, which is even faster than computing the result asymptotically. We also introduce several improvements and generalizations on the interactive proofs for CNN predictions, including verifying the convolutional layer, the activation function of ReLU and the max pooling. Our scheme is highly efficient in practice. It can support the large CNN of VGG16 with 15 million parameters and 16 layers. It only takes 88.3 seconds to generate the proof, which is 1264\texttimes{} faster than existing schemes. The proof size is 341 kilobytes, and the verifier time is only 59.3 milliseconds. Our scheme can further scale to prove the accuracy of the same CNN on 20 images.},
+  booktitle = {Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security (CCS '21)},
+  pages = {2968–2985},
+  numpages = {18},
+  keywords = {zero knowledge proofs, machine learning, convolutional neural networks},
+  doi = {10.1145/3460120.3485379},
+  url = {https://eprint.iacr.org/2021/673.pdf},
+}
+@comment{
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  location = {Virtual Event, Republic of Korea},
+  TODO: unify crypto-eprint citations
+}
+
+@article{Feng2021ZENAO,
+  author = {Boyuan Feng and Lianke Qin and Zhenfei Zhang and Yufei Ding and Shumo Chu},
+  title = {{ZEN}: An Optimizing Compiler for Verifiable, Zero-Knowledge Neural Network Inferences},
+  journal = {IACR Cryptol. ePrint Arch.},
+  year = {2021},
+  volume = {2021},
+  pages = {087},
+  abstract = {We present ZEN, the first optimizing compiler that generates efficient verifiable, zero-knowledge neural network inference schemes. ZEN generates two schemes: ZEN\textsubscript{acc} and ZEN\textsubscript{infer}. ZEN\textsubscript{acc} proves the accuracy of a committed neural network model; ZEN\textsubscript{infer} proves a specific inference result. Used in combination, these verifiable computation schemes ensure both the privacy of the sensitive user data as well as the confidentiality of the neural network models. However, directly using these schemes on zkSNARKs requires prohibitive computational cost. As an optimizing compiler, ZEN introduces two kinds of optimizations to address this issue: first, ZEN incorporates a new neural network quantization algorithm that incorporate two R1CS friendly optimizations which makes the model to be express in zkSNARKs with less constraints and minimal accuracy loss; second, ZEN introduces a SIMD style optimization, namely stranded encoding, that can encoding multiple 8bit integers in large finite field elements without overwhelming extraction cost. Combining these optimizations, ZEN produces verifiable neural network inference schemes with $5.43 \sim 22.19\times$ ($15.35\times$ on average) less R1CS constraints},
+  url = {https://eprint.iacr.org/2021/087.pdf},
+}
+
+@article{Ju2021EfficientSP,
+  author={Chanyang Ju and Hyeon Woo Lee and Heewon Chung and Jae Hong Seo and Sungwook Kim},
+  title={Efficient Sum-Check Protocol for Convolution},
+  journal={IEEE Access},
+  year={2021},
+  volume={9},
+  number={},
+  pages={164047-164059},
+  abstract={Many applications have recently adopted machine learning and deep learning techniques. Convolutional neural networks (CNNs) are made up of sequential operations including activation, pooling, convolution, and fully connected layer, and their computation cost is enormous, with convolution and fully connected layer dominating. In general, a user with insufficient computer capacity delegated certain tasks to a server with sufficient computing power, and the user may want to verify that the outputs are truly machine learning model predictions. In this paper, we are interested in verifying that the delegation of CNNs, one of the deep learning models for image recognition and classification, is correct. Specifically, we focus on the verifiable computation of matrix multiplications in a CNN convolutional layer. We use Thaler’s idea (CRYPTO 2013) for validating matrix multiplication operations and present a predicate function based on the insight that the sequence of operations can be viewed as sequential matrix multiplication. Furthermore, we lower the cost of proving by splitting a convolution operation into two halves. As a result, we can provide an efficient sum-check protocol for a convolution operation that, like the state-of-the-art zkCNN (ePrint 2021) approach, achieves asymptotically optimal proving cost. The suggested protocol is about  $2\times $  cheaper than zkCNN in terms of communication costs. We also propose a verified inference system based on our method as the fundamental building component.},
+  keywords={protocols, convolution, costs, convolutional neural networks, computational modeling, deep learning, computational efficiency, verifiable computation, matrix multiplication, convolutional neural networks, interactive proofs, sum-check protocol},
+  doi={10.1109/ACCESS.2021.3133442},
+  ISSN={2169-3536},
+  month={},
+  url={https://ieeexplore.ieee.org/document/9638642},
+}
+
+@misc{BrainbenchXYZ,
+  note = {\url{https://brainbench.xyz/}},
+  key = {Brainbench},
+}
+@comment{
+  title={{BrainBench} website},
+}
+
+@misc{ZcashHalo2GH,
+  note = {\url{https://github.com/zcash/halo2/tree/main}},
+  key = {Halo2},
+}
+@comment{
+  title={{Halo2} {GitHub} repository},
+}
+
+@misc{ZconduitEZKLGH,
+  note = {\url{https://github.com/zkonduit/ezkl}},
+  key = {EZKL},
+}
+@comment{
+  title={{EZKL} {GitHub} repository},
+}
+
+@inproceedings{BenSasson2014SuccinctNZ,
+  author = {Eli Ben-Sasson and Alessandro Chiesa and Eran Tromer and Madars Virza},
+  title = {Succinct {Non-Interactive} Zero Knowledge for a von Neumann Architecture},
+  booktitle = {23rd {USENIX} Security Symposium ({USENIX Security} 14)},
+  year = {2014},
+  isbn = {978-1-931971-15-7},
+  pages = {781--796},
+  url = {https://www.usenix.org/conference/usenixsecurity14/technical-sessions/presentation/ben-sasson},
+  abstract = {We build a system that provides succinct non-interactive
+zero-knowledge proofs (\emph{zk-SNARKs}) for program executions on a von Neumann RISC architecture. The system has two components: a cryptographic proof system for verifying satisfiability of arithmetic circuits, and a circuit generator to translate program executions to such circuits. Our design of both components improves in functionality and efficiency over prior work, as follows. Our circuit generator is the first to be \emph{universal}: it does not need to know the program, but only a bound on its running time. Moreover, the size of the output circuit depends \emph{additively} (rather than multiplicatively) on program size, allowing verification of larger programs. The cryptographic proof system improves proving and verification times, by leveraging new algorithms and a pairing library tailored to the protocol. We evaluated our system for programs with up to 10,000 instructions, running for up to 32,000 machine steps, each of which can arbitrarily access random-access memory; and also demonstrated it executing programs that use \emph{just-in-time compilation}. Our proofs are 230 bytes long at 80 bits of security, or 288 bytes long at 128 bits of security. Typical verification time is 5 ms, regardless of the original program’s running time.},
+  month = aug
+}
+@comment{
+  publisher = {USENIX Association},
+  address = {San Diego, CA},
+}
+@article{Bowe2017ScalableMC,
+  title = {Scalable Multi-party Computation for {zk-SNARK} Parameters in the Random Beacon Model},
+  author = {Sean Bowe and Ariel Gabizon and Ian Miers},
+  journal = {IACR Cryptol. ePrint Arch.},
+  year = {2017},
+  volume = {2017},
+  pages = {1050},
+  abstract = {We present MMORPG, a built system for zero-knowledge succinct non-interactive arguments of knowledge zk-SNARK parameter generation. zk-SNARKs are compact, efficient, and publicly verifiable zero-knowedge proofs for arbitrary computation. They have emerged as a valuable tool for verifiable computation, privacy preserving protocols, and blockchains. Currently practical schemes require a common reference string (CRS) to be constructed in a one-time setup for each statement. Corruption of this process leads to forged proofs and for applications such as cryptocurrencies, potentially billions of dollars in theft. Ben-Sasson, Chiesa, Green, Tromer and Virza [9] devised a multi-party protocol to securely compute such a CRS, and an adaptation of this protocol was used to construct the CRS for the Zcash cryptocurrency [16]. The trustworthiness of these protocols is obstructed by the need for a ``precommitment phase'' which forces the selection of a very small number of participants in advance and requires them to secure their secret randomness throughout the duration of the protocol. Our primary contribution is a more scalable multi-party computation (MPC) protocol, secure in the random beacon model, which omits the precommitment phase. We show that security holds even if an adversary has limited influence on the beacon. Next, we apply our main result to obtain a two-phase protocol for computing an extended version of the CRS of Groth's zk-SNARK [27]. We show that knowledge soundness is maintained in the generic group model when using this CRS. Finally, we implement and evaluate our system.},
+  url = {https://eprint.iacr.org/2017/1050.pdf}
+}
+
+@inproceedings{Kalai2017FromOT,
+  title = {From Obfuscation to the Security of {Fiat-Shamir} for Proofs},
+  author = {Yael Tauman Kalai and Guy N. Rothblum and Ron D. Rothblum},
+  booktitle = {Annual International Cryptology Conference},
+  year = {2017},
+  abstract = {The Fiat-Shamir paradigm [CRYPTO’86] is a heuristic for converting three-round identification schemes into signature schemes, and more generally, for collapsing rounds in constant-round public-coin interactive protocols. This heuristic is very popular both in theory and in practice, and its security has been the focus of extensive study. In particular, this paradigm was shown to be secure in the so-called Random Oracle Model. However, in the plain model, mainly negative results were shown. In particular, this heuristic was shown to be insecure when applied to \emph{computationally sound proofs} (also known as arguments). Moreover, recently it was shown that even in the restricted setting where the heuristic is applied to interactive \emph{proofs} (as opposed to arguments), its soundness cannot be proven via a black-box reduction to any so-called \emph{falsifiable} assumption. In this work, we give a \emph{positive result} for the security of this paradigm in the plain model. Specifically, we construct a hash function for which the Fiat Shamir paradigm is \emph{secure} when applied to proofs (as opposed to arguments), assuming the existence of a sub-exponentially secure indistinguishability obfuscator, the existence of an exponentially secure input-hiding obfuscator for the class of multi-bit point functions, and the existence of a sub-exponentially secure one-way function. While the hash function we construct is far from practical, we believe that this is a first step towards instantiations that are both more efficient and provably secure. In addition, we show that this result resolves a long-lasting open problem in the study of zero-knowledge proofs: It implies that there does not exist a public-coin constant-round zero-knowledge proof with negligible soundness (under the assumptions stated above).},
+  url = {https://eprint.iacr.org/2016/303.pdf}
+}
+
+@inproceedings{Gentry2009FullyHE,
+  title = {Fully homomorphic encryption using ideal lattices},
+  author = {Craig Gentry},
+  booktitle = {Symposium on the Theory of Computing},
+  year = {2009},
+  abstract = {We propose a fully homomorphic encryption scheme – i.e., a scheme that allows one to evaluate circuits over encrypted data without being able to decrypt. Our solution comes in three steps. First, we provide a general result – that, to construct an encryption scheme that permits evaluation of arbitrary circuits, it suffices to construct an encryption scheme that can evaluate (slightly augmented versions of) its own decryption circuit; we call a scheme that can evaluate its (augmented) decryption circuit bootstrappable. Next, we describe a public key encryption scheme using ideal lattices that is almost bootstrappable. Lattice-based cryptosystems typically have decryption algorithms with low circuit complexity, often dominated by an inner product computation that is in NC1. Also, ideal lattices provide both additive and multiplicative homomorphisms (modulo a public-key ideal in a polynomial ring that is represented as a lattice), as needed to evaluate general circuits. Unfortunately, our initial scheme is not quite bootstrappable – i.e., the depth that the scheme can correctly evaluate can be logarithmic in the lattice dimension, just like the depth of the decryption circuit, but the latter is greater than the former. In the final step, we show how to modify the scheme to reduce the depth of the decryption circuit, and thereby obtain a bootstrappable encryption scheme, without reducing the depth that the scheme can evaluate. Abstractly, we accomplish this by enabling the encrypter to start the decryption process, leaving less work for the decrypter, much like the server leaves less work for the decrypter in a server-aided cryptosystem.},
+  url = {https://www.cs.cmu.edu/~odonnell/hits09/gentry-homomorphic-encryption.pdf},
+}
+
+@inproceedings{Dijk2010FullyHE,
+  title = {Fully Homomorphic Encryption over the Integers},
+  author = {Marten van Dijk and Craig Gentry and Shai Halevi and Vinod Vaikuntanathan},
+  booktitle = {International Conference on the Theory and Application of Cryptographic Techniques},
+  year = {2010},
+  abstract = {We construct a simple fully homomorphic encryption scheme, using only elementary modular arithmetic. We use Gentry’s technique to construct a fully homomorphic scheme from a ``bootstrappable'' somewhat homomorphic scheme. However, instead of using ideal lattices over a polynomial ring, our bootstrappable encryption scheme merely uses addition and multiplication over the integers. The main appeal of our scheme is the conceptual simplicity. We reduce the security of our scheme to finding an approximate integer gcd – i.e., given a list of integers that are near-multiples of a hidden integer, output that hidden integer. We investigate the hardness of this task, building on earlier work of Howgrave-Graham.},
+  url = {https://link.springer.com/content/pdf/10.1007/978-3-642-13190-5_2.pdf},
+}
+
+@inproceedings{Brakerski2012LeveledFH,
+  title = {(Leveled) fully homomorphic encryption without bootstrapping},
+  author = {Zvika Brakerski and Craig Gentry and Vinod Vaikuntanathan},
+  booktitle = {Information Technology Convergence and Services},
+  year = {2012},
+  abstract = {We present a novel approach to fully homomorphic encryption (FHE) that dramatically improves performance and bases security on weaker assumptions. A central conceptual contribution in our work is a new way of constructing leveled fully homomorphic encryption schemes (capable of evaluating arbitrary polynomial-size circuits), without Gentry’s bootstrapping procedure. Specifically, we offer a choice of FHE schemes based on the learning with error (LWE) or Ring LWE (RLWE) problems that have $2^\lambda$ security against known attacks. We construct: 1) A leveled FHE scheme that can evaluate depth-L arithmetic circuits (composed of fan-in 2 gates) using $O(\lambda \texttimes L^3)$ per-gate computation. That is, the computation is quasi-linear in the security parameter. Security is based on RLWE for an approximation factor exponential in L. This construction does not use the bootstrapping procedure. 2) A leveled FHE scheme that can evaluate depth-L arithmetic circuits (composed of fan-in 2 gates) using $O(\lambda^2)$ per-gate computation, which is independent of L. Security is based on RLWE for quasi-polynomial factors. This construction uses bootstrapping as an optimization. We obtain similar results for LWE, but with worse performance. All previous (leveled) FHE schemes required a per-gate computation of $\Omega(\lambda^{3.5})$, and all of them relied on sub-exponential hardness assumptions. We introduce a number of further optimizations to our scheme based on the Ring LWE assumption. As an example, for circuits of large width – e.g., where a constant fraction of levels have width $\Omega(\lambda)$ – we can reduce the per-gate computation of the bootstrapped version to $O(\lambda)$, independent of L, by batching the bootstrapping operation. At the core of our construction is a much more effective approach for managing the noise level of lattice-based ciphertexts as homomorphic operations are performed, using new techniques recently introduced by Brakerski and Vaikuntanathan (FOCS 2011).},
+  url = {http://people.csail.mit.edu/vinodv/6892-Fall2013/BGV.pdf},
+}
+
+@article{Gentry2013HomomorphicEF,
+  title = {Homomorphic Encryption from Learning with Errors: Conceptually-Simpler, Asymptotically-Faster, Attribute-Based},
+  author = {Craig Gentry and Amit Sahai and Brent Waters},
+  journal = {IACR Cryptol. ePrint Arch.},
+  year = {2013},
+  volume = {2013},
+  pages = {340},
+  abstract = {We describe a comparatively simple fully homomorphic encryption (FHE) scheme based on the learning with errors (LWE) problem. In previous LWE-based FHE schemes, multiplication is a complicated and expensive step involving “relinearization”. In this work, we propose a new technique for building FHE schemes that we call the \emph{approximate eigenvector method}. In our scheme, for the most part, homomorphic addition and multiplication are just matrix addition and multiplication. This makes our scheme both asymptotically faster and (we believe) easier to understand. In previous schemes, the homomorphic evaluator needs to obtain the user’s “evaluation key”, which consists of a chain of encrypted secret keys. Our scheme has no evaluation key. The evaluator can do homomorphic operations without knowing the user’s public key at all, except for some basic parameters. This fact helps us construct the first identity-based FHE scheme. Using similar techniques, we show how to compile a recent attribute-based encryption scheme for circuits by Gorbunov et al. into an attribute-based FHE scheme that permits data encrypted under the same index to be processed homomorphically.},
+  url = {https://eprint.iacr.org/2013/340.pdf},
+}
+
+@inproceedings{Cheon2017HomomorphicEF,
+  title = {Homomorphic Encryption for Arithmetic of Approximate Numbers},
+  author = {Jung Hee Cheon and Andrey Kim and Miran Kim and Yongsoo Song},
+  booktitle = {International Conference on the Theory and Application of Cryptology and Information Security},
+  year = {2017},
+  abstract = {We suggest a method to construct a homomorphic encryption scheme for approximate arithmetic. It supports an approximate addition and multiplication of encrypted messages, together with a new \emph{rescaling} procedure for managing the magnitude of plaintext. This procedure truncates a ciphertext into a smaller modulus, which leads to rounding of plaintext. The main idea is to add a noise following significant figures which contain a main message. This noise is originally added to the plaintext for security, but considered to be a part of error occurring during approximate computations that is reduced along with plaintext by rescaling. As a result, our decryption structure outputs an approximate value of plaintext with a predetermined precision. We also propose a new batching technique for a RLWE-based construction. A plaintext polynomial is an element of a cyclotomic ring of characteristic zero and it is mapped to a message vector of complex numbers via complex canonical embedding map, which is an isometric ring homomorphism. This transformation does not blow up the size of errors, therefore enables us to preserve the precision of plaintext after encoding. In our construction, the bit size of ciphertext modulus grows linearly with the depth of the circuit being evaluated due to rescaling procedure, while all the previous works either require an exponentially large size of modulus or expensive computations such as bootstrapping or bit extraction. One important feature of our method is that the precision loss during evaluation is bounded by the depth of a circuit and it exceeds at most one more bit compared to unencrypted approximate arithmetic such as floating-point operations. In addition to the basic approximate circuits, we show that our scheme can be applied to the efficient evaluation of transcendental functions such as multiplicative inverse, exponential function, logistic function and discrete Fourier transform.},
+  keywords = {homomorphic encryption, approximate arithmetic},
+  url = {https://eprint.iacr.org/2016/421.pdf},
+}
+
+@article{Viand2023VerifiableFH,
+  title = {Verifiable Fully Homomorphic Encryption},
+  author = {Alexander Viand and Christian Knabenhans and Anwar Hithnawi},
+  journal = {ArXiv},
+  year = {2023},
+  volume = {abs/2301.07041},
+  url = {https://arxiv.org/pdf/2301.07041.pdf},
+}
+
+@article{Chatel2022VerifiableEF,
+  title = {Verifiable Encodings for Secure Homomorphic Analytics},
+  author = {Sylvain Chatel and Christian Knabenhans and Apostolos Pyrgelis and Jean-Pierre Hubaux},
+  journal = {ArXiv},
+  year = {2022},
+  volume = {abs/2207.14071},
+  abstract = {Fully Homomorphic Encryption (FHE) is seeing increasing real-world deployment to protect data in use by allowing computation over encrypted data. However, the same malleability that enables homomorphic computations also raises \emph{integrity} issues, which have so far been mostly overlooked. While FHE’s lack of integrity has obvious implications for correctness, it also has severe implications for confidentiality: a malicious server can leverage the lack of integrity to carry out interactive key-recovery attacks. As a result, virtually all FHE schemes and applications assume an honest-but-curious server who does not deviate from the protocol. In practice, however, this assumption is insufficient for a wide range of deployment scenarios. While there has been work that aims to address this gap, these have remained isolated efforts considering only aspects of the overall problem and fail to fully address the needs and characteristics of modern FHE schemes and applications. In this paper, we analyze existing FHE integrity approaches, present attacks that exploit gaps in prior work, and propose a new notion for maliciously-secure verifiable FHE. We then instantiate this new notion with a range of techniques, analyzing them and evaluating their performance in a range of different settings. We highlight their potential but also show where future work on tailored integrity solutions for FHE is still required.},
+  url = {https://arxiv.org/pdf/2207.14071.pdf},
+}
+
+@article{Atapoor2024VerifiableFV,
+  title = {Verifiable {FHE} via Lattice-based {SNARKs}},
+  author = {Shahla Atapoor and Karim Baghery and Hilder V. L. Pereira and Jannik Spiessens},
+  journal = {IACR Cryptol. ePrint Arch.},
+  year = {2024},
+  volume = {2024},
+  pages = {32},
+  abstract = {Fully Homomorphic Encryption (FHE) is a prevalent cryptographic primitive that allows for computation on encrypted data. In various cryptographic protocols, this enables outsourcing computation to a third party while retaining the privacy of the inputs to the computation. However, these schemes make an honest-but-curious assumption about the adversary. Previous work has tried to remove this assumption by combining FHE with Verifiable Computation (VC). Recent work has increased the flexibility of this approach by introducing integrity checks for homomorphic computations over rings. However, efficient FHE for circuits of large multiplicative depth also requires non-ring computations called maintenance operations, i.e. modswitching and keyswitching, which cannot be efficiently verified by existing constructions. We propose the first efficiently verifiable FHE scheme that allows for arbitrary depth homomorphic circuits by utilizing the double-CRT representation in which FHE schemes are typically computed, and using lattice-based SNARKs to prove components of this computation separately, including the maintenance operations. Therefore, our construction can theoretically handle bootstrapping operations. We also present the first implementation of a verifiable computation on encrypted data for a computation that contains multiple ciphertext-ciphertext multiplications. Concretely, we verify the homomorphic computation of an approximate neural network containing three layers and >100 ciphertexts in less than 1 second while maintaining reasonable prover costs.},
+  keywords = {Fully-Homomorphic Encryption, Verifiable FHE, Lattice-based SNARKs, Computation on Encrypted Data},
+  url = {https://eprint.iacr.org/2024/032.pdf},
+}
+
+@article{Yao1982ProtocolsFS,
+  title = {Protocols for secure computations},
+  author = {Andrew Chi-Chih Yao},
+  journal = {23rd Annual Symposium on Foundations of Computer Science (sfcs 1982)},
+  year = {1982},
+  pages = {160-164},
+  url = {https://research.cs.wisc.edu/areas/sec/yao1982-ocr.pdf},
+}
+
+@article{Schoenmakers2015UniversallyVM,
+  title = {Universally Verifiable Multiparty Computation from Threshold Homomorphic Cryptosystems},
+  author = {Berry Schoenmakers and Meilof Veeningen},
+  journal = {IACR Cryptol. ePrint Arch.},
+  year = {2015},
+  volume = {2015},
+  pages = {58},
+  abstract = {Multiparty computation can be used for privacy-friendly outsourcing of computations on private inputs of multiple parties. A computation is outsourced to several computation parties; if not too many are corrupted (e.g., no more than half), then they cannot determine the inputs or produce an incorrect output. However, in many cases, these guarantees are not enough: we need correctness even if all computation parties may be corrupted; and we need that correctness can be verified even by parties that did not participate in the computation. Protocols satisfying these additional properties are called “universally verifiable”. In this paper, we propose a new security model for universally verifiable multiparty computation, and we present a practical construction, based on a threshold homomorphic cryptosystem. We also develop a multiparty protocol for jointly producing non-interactive zero-knowledge proofs, which may be of independent interest},
+  url = {http://eprint.iacr.org/2015/058.pdf},
+}
+
+@article{Laud2014VerifiableCI,
+  title = {Verifiable Computation in Multiparty Protocols with Honest Majority},
+  author = {Peeter Laud and Alisa Pankova},
+  journal = {IACR Cryptol. ePrint Arch.},
+  year = {2014},
+  volume = {2014},
+  pages = {60},
+  abstract = {We present a generic method for turning passively secure protocols into protocols secure against covert attacks. The method adds a post-execution verification phase to the protocol that allows a misbehaving party to escape detection only with negligible probability. The execution phase, after which the computed protocol result is already available for parties, has only negligible overhead added by our method. The checks, based on linear probabilistically checkable proofs, are done in zero-knowledge, thereby preserving the privacy guarantees of the original protocol. Our method is inspired by recent results in verifiable computation, adapting them to multiparty setting and significantly lowering their computational costs for the provers.},
+  keywords = {Secure multiparty computation, Verifiable computation, Linear PCP},
+  url = {https://eprint.iacr.org/2014/060.pdf},
+}
+
+@article{YoutubeAlgorithmHackernoon,
+  author = {Alex Lefkowitz},
+  title = {Does {YouTube’s} Algorithm Discriminate Against Minority Creators?},
+  journal = {Hackernoon},
+  url = {https://hackernoon.com/does-youtubes-algorithm-discriminate-against-minority-creators},
+}
+
+@article{FacebookAlgorithmPeoplesDispatch,
+  author = {Prabir Purkayastha},
+  title = {How {Facebook} algorithms promote hate and toxic content},
+  journal = {Peoples Dispatch},
+  url = {https://peoplesdispatch.org/2021/10/08/how-facebook-algorithms-promote-hate-and-toxic-content/},
+}
+
+@article{TwitterBiasTheGuardian,
+  author = {},
+  title = {How {Facebook} algorithms promote hate and toxic content},
+  journal = {The Guardian},
+  url = {https://peoplesdispatch.org/2021/10/08/how-facebook-algorithms-promote-hate-and-toxic-content/},
+  key = {Guardian},
+}
+
+@article{TensorPlonkMedium,
+  author = {Suppakit Waiwitlikhit and Daniel Kang},
+  title = {{TensorPlonk}: A ``{GPU}'' for {ZKML}, Delivering 1,000x Speedups},
+  journal = {Medium},
+  url = {https://medium.com/@danieldkang/tensorplonk-a-gpu-for-zkml-delivering-1-000x-speedups-d1ab0ad27e1c},
+  urldate = {2022-04-17},
+}

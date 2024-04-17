@@ -12,10 +12,10 @@ This repository contains the LaTeX source code for our whitepaper. This document
 To compile this whitepaper, you need a LaTeX distribution such as TeX Live, MiKTeX, or MacTeX. Ensure you have `pdflatex` and `bibtex` commands available in your system.
 
 ## Compiling the Whitepaper
-To compile the whitepaper, run the following commands in the terminal:
+To compile the whitepaper, run the following command in the terminal:
 
 ```
-pdflatex zk-vin-whitepaper
+latexmk
 ```
 
 ## Contributing
