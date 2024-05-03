@@ -1,5 +1,5 @@
 
-# zklayer.ai Network
+# zklayer.ai - Verified Inference Network
 
 ## Overview
 This repository contains the LaTeX source code for our whitepaper. This document presents a comprehensive analysis of our plans to build a network solely for verified artificial intelligence inferences and operations.
