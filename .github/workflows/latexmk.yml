@@ -9,11 +9,11 @@ jobs:
       - name: Compile LaTeX document
         uses: dante-ev/latex-action@latest
         with:
-          root_file: zk-vin-whitepaper.tex
+          root_file: zklayer-whitepaper.tex
       - name: Save artifact
         uses: actions/upload-artifact@v4
         with:
           name: whitepaper.pdf
-          path: zk-vin-whitepaper.pdf
+          path: zklayer-whitepaper.pdf
 
 
