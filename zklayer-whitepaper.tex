@@ -383,7 +383,7 @@ In order to complete inference workloads for a model, a model node must register
 
 The network implements sets of blocks, called epochs, in which a registered node must be available. Nodes that register in the current epoch are activated during the following epoch. Model nodes commit compute units per unit of time to the network. Since the compute units for a workload are known ahead of time the network delegates workloads to fill but not exceed its compute capacity.
 
-It is the expectation that a model node will complete delegated workloads during a registered epoch. Model nodes that fail to complete work while registered or otherwise shown to be unavailable will face a penalty.
+It is the expectation that a model node will complete delegated workloads during a registered epoch. Model nodes which fail to complete work while registered or otherwise shown to be unavailable will face a penalty.
 
 \subsection{Model Vetting}
 
