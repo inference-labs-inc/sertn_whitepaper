@@ -216,7 +216,7 @@ For consumers of AI predictions, ZKLayer offers an additional layer of assurance
 
 \subsection{Technical Architecture}
 
-To address current blockchain limitations and challenges of running on-chain Neural Networks, ZKLayer is designed to serve as a conduit between off-chain and on-chain architectures. Taking a forward-looking approach, the ZKLayer architecture is inherently modular, a design philosophy that allows each component of the system to be individually updated or replaced.
+To address current blockchain limitations and challenges of running on-chain Neural Networks, ZKLayer is designed to serve as a conduit between off-chain and on-chain architectures. Taking a forward-looking approach, the ZKLayer architecture is inherently modular, a design philosophy for each component of the system to be individually updated or replaced.
 
 \begin{figure}[!ht]
     \centering
@@ -337,7 +337,7 @@ Due to the considerable size of input and outputs from AI models, external persi
 
 \subsection{Aggregation Circuits}
 
-As the complexity of a model increases, so does the size of its associated zk-circuit which results in larger proofs. To manage this, aggregation circuits are utilized to amalgamate multiple proofs into a singular, more concise proof that can be submitted on-chain, along with the corresponding output data. This technique also permits the batching of related inferences, enhancing efficiency and reducing the on-chain data storage footprint.
+As the complexity of a model increases, so does the size of its associated zk-circuit which results in larger proofs. To manage this, aggregation circuits are utilized to amalgamate multiple proofs into a singular concise proof submitted on-chain, along with the corresponding output data. This technique also permits the batching of related inferences, enhancing efficiency and reducing the on-chain data storage footprint.
 
 \subsection{On-chain Architecture}
 
@@ -389,9 +389,9 @@ It is the expectation that a model node will complete delegated workloads during
 
 As ZKLayer will be an open permission-less network, no party (or even Inference Labs) can decide which models should or shouldn’t be available on the network. Instead an economic system determines how “good” a model is. This is crucial to retain an open and fair censorship free network.
 
-Verified backtesting is published by the model creator and made available to the public. Users get a guarantee the model will perform a certain way under set circumstances rather than relying on blind trust in published accuracy, precision and recall values. While the provided examples may not be representative of real-world use cases as it is self-published by the creator, this can be seen as a move in the right direction. Users also submit inferences one at a time, with no upfront commitments or complicated setup to quickly verify the usefulness of the model for their application.
+Verified backtesting is published by the model creator and made available to the public. Users get a guarantee the model will perform a certain way under set circumstances rather than relying on blind trust in published accuracy, precision and recall values. While the provided examples may not be representative of real-world use cases as it is self-published by the creator, this is clearly a move in the right direction. Users also submit inferences one at a time, with no upfront commitments or complicated setup to quickly verify the usefulness of the model for their application.
 
-Aggregating on-chain historical usage of a model results in a proof of its usefulness. How “good” a model is can be answered by its frequency of use, inference by a diverse set of applications and users, and repeat use of a model by a user. In the same way an open-source software package can be evaluated by the number of other projects that depend on it (and subsequently how “good” those packages are).
+Aggregating on-chain historical usage of a model results in a proof of its usefulness. How “good” a model is can be answered by its frequency of use, inference by a diverse set of applications and users, and repeat use of a model by a user. In the same way an open-source software package can be evaluated by the number of other projects which depend on it (and subsequently how “good” those packages are).
 
 The network implements a non-zero registration fee for models to prevent flooding of the network with unusable or non-existent models.
 
@@ -586,7 +586,7 @@ EZKL is a library and command-line tool for doing inference for deep learning mo
 \end{enumerate}
 
 
-\section{Remained Challenges and future work}
+\section{Remaining Challenges and future work}
 
 This section first discusses remaining concerns such as IP risk and data privacy, then it explores future enhancements for ZKLayer. We anticipate ZKLayer's potential to support emerging technologies like FHEML, verifiable FHE, MPCML, and others. While these technologies currently pose computational challenges and are not yet practical, advancements in technology suggest that efficient solutions will become available over time. Consequently, ZKLayer remains adaptable for updates to accommodate new technologies and services.
 
@@ -600,7 +600,7 @@ One of the most valuable aspects of ZKLayer is the aggregation of inferences. Ha
 
 \textbf{* IP Replication Risk}
 
-While not a perfect analogy, one must not assume the process of zk-circuit generation to proving and veriﬁcation keys is strictly one way as it would be with any secure hash function. There may be artifacts in the keys that give hints about the original circuit design and therefore the underlying model used to generate the circuits~\cite{BenSasson2014SuccinctNZ}. While it is likely computationally impractical to reverse this process and regenerate the original model from the keys, the risk still theoretically exists.
+While not a perfect analogy, one must not assume the process of zk-circuit generation to proving and veriﬁcation keys is strictly one way as it would be with any secure hash function. There may be artifacts in the keys which give hints about the original circuit design and therefore the underlying model used to generate the circuits~\cite{BenSasson2014SuccinctNZ}. While it is likely computationally impractical to reverse this process and regenerate the original model from the keys, the risk still theoretically exists.
 
 \textbf{* Public Veriﬁcation Key}
 
@@ -610,7 +610,7 @@ During the initial circuit generation phase, certain proving systems (namely zk-
 
 \textbf{* Trusted Setup Risk}
 
-There are a few methods to mitigate this which are in early development. Recently ahead of the Unirep v2 launch, a call to the public was made to assist in a public trusted setup generation process (which Inference Labs proudly participated in) and the tools are open source to repeat this process. This process can be replicated at scale and at the protocol level, which allows nodes on the network to contribute to the process as new models are registered on the network and provide incentives for nodes to participate. This also further increases the security of the setup process and the overall network.
+There are a few methods to mitigate this which are in early development. Recently ahead of the Unirep v2 launch, a call to the public was made to assist in a public trusted setup generation process (which Inference Labs proudly participated in) and the tools are open source to repeat this process. This process can be replicated at scale and at the protocol level. When new models are registered, nodes contribute to the process and are incentivized for their participation. This also further increases the security of the setup process and the overall network.
 
 
 \textbf{* Age of ZK}
@@ -674,7 +674,7 @@ ZKML and other privacy-preserving machine learning (PPML) technologies hold the 
 
 To address this issue, companies should demonstrate the fairness of their AI models. A naïve solution would be for these companies to publicly disclose their algorithms. However, this approach conflicts with their intellectual property rights. Therefore, ZKML proposes a solution whereby companies can prove that they are using a specific algorithm for all users without revealing any information about their models. Kang et al.~\cite{TensorPlonkMedium}. have provided insights into the ZKML system, which operates using GPU acceleration (GPA). The use of GPA can accelerate the proof generation process by over 1000 times. Consequently, they suggest that Twitter could generate proofs for 1\% of the 500 million tweets per day from its users for approximately \$21,000 per day. Given that this cost represents less than 0.5\% of Twitter's annual infrastructure expenses, it is feasible for Twitter to demonstrate the fairness of its feed AI models.
 
-In the future, as AI models increasingly handle decision-making and various tasks, responsible AI will become even more critical than it is today. Simultaneously, with a shift towards decentralization, most communications and transactions are expected to occur on Web3. In such an environment, ZKLayer could play a vital role by enabling AI model operators to broadcast proofs of honesty on Web3 without compromising the confidentiality of their model details.
+In the future, as AI models increasingly handle decision-making and various tasks, responsible AI will become even more critical than it is today. Simultaneously, with a shift towards decentralization, most communications and transactions are expected to occur on Web3. In such an environment, ZKLayer will play a vital role by enabling AI model operators to broadcast proofs of honesty on Web3 without compromising the confidentiality of their model details.
 
 \section{Conclusion}
 The Zero-Knowledge Layer (ZKLayer) presents a comprehensive solution to the challenges of integrating AI and blockchain technology. It provides a decentralized protocol that enables secure, off-chain AI model inferences while preserving intellectual property through zero-knowledge cryptography. This innovative approach not only enhances privacy and security but also ensures the integrity and authenticity of AI models. The ZKLayer architecture is designed to be modular and adaptable, supporting rapid deployment across multiple blockchain ecosystems. This work reﬂects a signiﬁcant step towards realizing a decentralized, secure, and privacy-preserving foundation for AI-enhanced blockchain systems, potentially revolutionizing the way AI operates in the blockchain space and contributing to the broader adoption of web3 technologies.
