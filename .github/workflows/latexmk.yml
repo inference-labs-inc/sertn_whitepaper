@@ -9,11 +9,11 @@ jobs:
       - name: Compile LaTeX document
         uses: dante-ev/latex-action@latest
         with:
-          root_file: Sertn - Whitepaper.tex
+          root_file: sertn-whitepaper.tex
       - name: Save artifact
         uses: actions/upload-artifact@v4
         with:
           name: whitepaper.pdf
-          path: Sertn - Whitepaper.pdf
+          path: sertn-whitepaper.pdf
 
 
