@@ -1,11 +1,11 @@
 
-# zklayer.ai - Verified Inference Network
+# Sertn - A Verified Inference Network
 
 ## Overview
 This repository contains the LaTeX source code for our whitepaper. This document presents a comprehensive analysis of our plans to build a network solely for verified artificial intelligence inferences and operations.
 
 ## File Structure
-- `zklayer-whitepaper.tex`: The main LaTeX file that compiles the entire whitepaper.
+- `Sertn - Whitepaper.tex`: The main LaTeX file that compiles the entire whitepaper.
 - `figures/`: Directory containing figures and images used in the whitepaper.
 
 ## Prerequisites
