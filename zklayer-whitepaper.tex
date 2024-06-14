@@ -335,9 +335,18 @@ These pools consist of registered nodes that are assigned to process specific mo
 Due to the considerable size of input and outputs from AI models, external persistent storage is required. Depending on the ultimate end use case of the output, storage within ZKLayer may not be required. An example is an NFT image generated with a diffusion model. The hash of the image can be verified and stored on-chain with the image being stored on Arweave~\cite{Arweave} or other decentralized storage networks.
 
 
-\subsection{Aggregation Circuits}
+\subsection{Aggregation Circuits and Staked Deferred Proofs}
 
 As the complexity of a model increases, so does the size of its associated zk-circuit which results in larger proofs. To manage this, aggregation circuits are utilized to amalgamate multiple proofs into a singular concise proof submitted on-chain, along with the corresponding output data. This technique also permits the batching of related inferences, enhancing efficiency and reducing the on-chain data storage footprint.
+
+One issue that can arise with aggregation is response time. 
+% When a user queries a model, they will expect a response as quickly as possible, however with proofs being aggregated before publishing the results of the model, we must prevent the user will have to wait until enough proofs have been generated to aggregate, in order to obtain their result.
+Users querying a model likely do not want to wait for the worker to aggregate many proofs in order to obtain the result of their query.
+
+
+The Staked Deferred Proof (SDP) protocol involves the worker staking token as a commitment to providing a valid proof at a later time. Upon receiving a query, the worker will produce an output, as well as storing (but not sending) the associated proof. Instead of sending the proof, the worker will stake some token, promising to provide a valid proof. When enough queries have been made, the worker will provide an aggregated proof to the chain. Once this aggregation has been verified, the worker will retrieve their staked token. If however the proof is incorrect, the staked token will be released to the users as compensation for the incorrect response to their query.
+
+This solution can reduce wait times for users, while still solving the efficiency problems caused by larger proofs. 
 
 \subsection{On-chain Architecture}
 
