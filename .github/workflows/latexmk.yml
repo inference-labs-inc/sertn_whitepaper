@@ -9,11 +9,9 @@ jobs:
       - name: Compile LaTeX document
         uses: dante-ev/latex-action@latest
         with:
-          root_file: sertn-whitepaper.tex
+          root_file: inference-network-whitepaper.tex
       - name: Save artifact
         uses: actions/upload-artifact@v4
         with:
           name: whitepaper.pdf
-          path: sertn-whitepaper.pdf
-
-
+          path: inference-network-whitepaper.pdf
